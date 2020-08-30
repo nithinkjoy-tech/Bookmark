@@ -1,0 +1,29 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3"> <i class="fas fa-sign-in-alt"></i></h1>
+            <form action="/tags" method="POST">
+                <div class="form-group">
+                    <label for="email">Create a new tag</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="tag name" />
+                </div>
+                <button type="submit" class="btn btn-secondary btn-block">Create a new tag</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3"> <i class="fas fa-sign-in-alt"></i></h1>
+
+
+            <form action="/viewtags" method="GET">
+                <button type="submit" class="btn btn-primary btn-block">Show available tags</button>
+            </form>
+        </div>
+    </div>
+</div>

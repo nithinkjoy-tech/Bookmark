@@ -1,0 +1,54 @@
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3"> <i class="fas fa-sign-in-alt"></i></h1>
+
+
+
+            <form action="/bookmarks" method="POST">
+                <div class="form-group">
+                    <label for="email">Paste your link here</label>
+                    <input type="text" id="link" name="link" class="form-control" placeholder="Paste link here" /><br>
+                    <input type="text" id="tag" name="tags" class="form-control" placeholder="Insert available tags seperated by commas(optional)" />
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Create a bookmark</button>
+            </form>
+        </div>
+    </div>
+</div>
+<h4>Available tags</h4>
+<% for(i=0;i<n;i++) { %>
+    <div class="inputGroup">
+        <input id="<%= i %>" name="<%= tags[i] %>" type="radio" class="hii" onclick="fn1(value)"  value="<%= tags[i] %>" />
+        <label for="<%= i %>"><%= tags[i] %></label>
+    </div>
+    <% } %>
+
+    <script>
+        function fn1(val){
+            let data=document.getElementById("tag").value.split(",")
+            for(let i=0;i<data.length;i++){
+                if(data[i]===val) return
+            }
+            if(!document.getElementById("tag").value){
+                document.getElementById("tag").value+=val
+            }else{
+                document.getElementById("tag").value+=","+val
+            }
+        }
+    </script>
+
+
+<div class="row mt-5">
+    <div class="col-md-6 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3"> <i class="fas fa-sign-in-alt"></i></h1>
+
+
+            <form action="/viewbookmarks" method="GET">
+                <button type="submit" class="btn btn-primary btn-block">Show available bookmarks</button>
+            </form>
+        </div>
+    </div>
+</div>
